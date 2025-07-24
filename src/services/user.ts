@@ -1,6 +1,14 @@
 import api from './api';
 
-
+export interface User {
+  id: string;
+  username: string;
+  email?: string;
+  avatar?: string;
+  nickname?: string;
+  is_online?: boolean;
+  last_seen?: string;
+}
 
 export interface UserSearchParams {
   query: string;
