@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+  
+  body {
+    @apply text-gray-900 bg-gray-50 dark:text-gray-100 dark:bg-gray-900;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 认证页面特殊样式 - 防止滚动条 */
+  body.auth-page-active {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 border border-gray-200/50 dark:border-gray-700/50;
+  }
+  
+  .chat-bubble {
+    @apply relative px-4 py-2 rounded-2xl max-w-xs sm:max-w-md break-words;
+  }
+  
+  .chat-bubble-sent {
+    @apply bg-primary-500 text-white ml-auto;
+  }
+  
+  .chat-bubble-received {
+    @apply bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 mr-auto;
+  }
+  
+  .conversation-item {
+    @apply flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors duration-200;
+  }
+  
+  .conversation-item-active {
+    @apply bg-primary-50 dark:bg-primary-900/20 border-r-2 border-primary-500;
+  }
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full h-6 w-6 border-2 border-primary-500 border-t-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+} 
